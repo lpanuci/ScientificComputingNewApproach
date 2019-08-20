@@ -1,13 +1,67 @@
+\documentclass{book}
+\usepackage[utf8]{inputenc}
+\begin{document}
 \chapter{\emph{Probability}} 
 \label{probability}
 
 \section{What is probability?}
-Kolmogorov axioms
+\subsection{Foundations}
 
-\section{What is it, really?}
+    In 1933, Andrey Kolmogorov published a book which is known as one of the first formal approaches in Probability Theory. In his book, Foundations of Probability Theory, Kolmogorov introduces probability with  three axiomes.
 
-\section{Random variables}
+\subsection{Fundamental Definitions}
 
-\section{Independence and Bayes theorem}
+\begin{itemize}
+\item Let $\Omega$ be the set of all elementary events. We call $\Omega$ a sample space of the experiment.
+\item Let $\Sigma$ be the subsets of $\Omega$ that form a $\sigma$-algebra, satisfying:
+ \begin{enumerate}
+ \item $\Sigma$ contains at least one subset of $\Omega$
+ \item Let $A$ be a set of elements. If $A$ $\in$ $\Sigma$, so $\Omega$/$A$ $\in$ $\Sigma$
+  \item If $A_1$,$A_2$,..., $A_n$ $\in$ $\Sigma$, so $A_1$ $\cup$ $A_2$ $\cup$...
+  $\cup$ $A_n$ $\in$ $\Sigma$.
+  \end{enumerate}
+  \item The elements of $\Sigma$ are denoted random events
+  \item If $A$,$B$ $\in$ $\Sigma$, so:
+  \begin{enumerate}
+      \item   $A$ $\cup$ $B$ $\in$ $\Sigma$
+      \item   $A$ $\cap$ $B$ $\in$ $\Sigma$
+      \end{enumerate}
+      \item $\Omega$ $\in$ $\Sigma$
+      \item   $\emptyset$ $\in$ $\Sigma$
+       \item  $\langle$ $\Omega$,$\Sigma$ $\rangle$ is defined as the mensurable space.
+  \end{enumerate}   
+ 
+  \end{itemize}
+  
+\subsection{Probability}
 
-\section{Probability models}
+For $A$ $\in$ $\Sigma$, we now introduce the Probability of $A$ as a non-negative real number.\\ 
+\\ 
+The probability P Domain and Image are represented by: P:$\Sigma$ \mapsto [0,1].\\ 
+\\ 
+So, \forall$A$ $\in$ $\Sigma$, $\exists$ $P(A)$ $\geq$ $0$, satisfying:
+\begin{itemize}
+    \item P($\Omega$) = $1$.
+    \item If $A$,$B$ $\in$ $\Sigma$ and $A$ $\cap$ $B$ =  $\emptyset$, so P($A$) + P($B$) = P($A$ $\cup$ $B$)
+\end{itemize}
+We also define $\langle$ $\Omega$, $\Sigma$, P $\rangle$ as the probability space.
+\\ \\ 
+ \textbf{Theorem 1.}
+ Let $A$ $\in$ $\Sigma$, we have that P($A$) + P($A^c)$ = $1$.
+  \\ 
+   \\ 
+  \textit{Proof.} Since $A^c$ is the logical negation of $A$, we have that $A^c$ =  $\Omega$/$A$, the sum P($A$) + P($A^c)$ = P($A$) + P($\Omega$/$A$) = P($\Omega$) = 1.
+   \\ \\ 
+  \textbf{Theorem 2.} P($\emptyset$) = 0, the probability of the empty set.
+     \\ \\ 
+   \textit{Proof.} Let $A$ $\in$ $\Sigma$, we have that P($A$ $\cup$ $\emptyset$) = P($A$) + P($\emptyset$) = P($A$)\\
+     \hspace*{6.2cm}\Rightarrow P($\emptyset$) = P($A$) - P($A$) = 0. \\
+  \hspace*{7cm}(Note that $A$ $\cup$ $\emptyset$ = $A$)
+       \\ \\ 
+  \textbf{Theorem 3.} If $A_1$,$A_2$,..., $A_n$ $\in$ $\Sigma$, and $A_i$ $\cap$ $A_j$ = $\emptyset$, $\forall$ $i,j$ between 1 and n, then:\\  \\   \hspace*{6.2cm}P(\bigcup\limits_{j=1}^{n} A_j$) = $\sum_{j=1}^{n} $A_j$ 
+ \\ \\ 
+\textit{Proof.} Considering n = 2, we have simply reduce to the case in the definition of probability. Using induction, we can proof that this equality holds $\forall$ n, where n is a  non-negative number.  \\ 
+Obs: Using induction, if we assume that the equation is true for N, we notice that $A_N$  $\cap$ $A_{N+1}$ = $\emptyset$, and the proof is almost complete.
+
+
+\end{document}
