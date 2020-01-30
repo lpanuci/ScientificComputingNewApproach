@@ -1,0 +1,84 @@
+\documentclass[oneside]{book}
+\usepackage[utf8]{inputenc}
+\usepackage{mathptmx}
+\usepackage[11pt]{moresize}
+\usepackage{amsmath}
+
+\title{Statistical Inference:  Introduction}
+\author{Luca Hullen Panuci}
+\date{January 2020}
+
+
+\begin{document}
+
+\maketitle
+
+\section*{What is Statistical Inference?}
+
+It is very common to a scientist, for example,attempt to make or validate propositions, of very different natures. In order to do that, it is common to use methods from Statistical Inference.\\
+
+In general, experiments are used to collect some data about a phenomena. Given a hypothesis about a sampling, for which we wish to draw inferences, statistical inference consists of selecting a statistical model of the process that generates the data and deducing propositions from the model. 
+\section*{Richard Cox and the Probabilistic Logic}
+
+The physicist Richard Cox were very important in the development of the probability theory together with others informations, like Bayes Theorem. He wondered what rules the maximum belief values should obey in order to be consistent in a logical and formal way. Then, Cox founded that an information about the degree of  belief in its trueness must follow the usual probability theory rules, in order to be consistent:\\
+\begin{center}
+$P(A|I) + P(\Bar{A}|I)= 1$
+\\
+\end{center}
+\begin{center}
+    $P(A,B|I) = P(A|B,I)$ x $P(B|I)$
+    
+\end{center}
+\\
+\begin{center}
+    $0 \leq P(x) \leq 1$ 
+\end{center}
+\\
+\begin{center}
+    $P(A,B) = P(A|B)P(B)$
+\end{center}
+\begin{center}
+    $P(A)=1 \implies P(\Bar{A})=0.$
+\end{center}
+Here, we are using that $\Bar{A}$ denotes the proposition that A is false."$|$" Denotes given (as in Bayesian theorem)\\
+
+\section*{Bayes' Theorem: Marginalization}
+
+A very important property that outcomes from these implications above is:
+
+\begin{center}
+    $P(hypothesis|data, I) \propto P(data|hypothesis, I)$ x $P(hypothesis, I)$.
+    
+\end{center}
+\begin{itemize}
+    
+
+    
+
+\item The term $P(hypothesis|I)$ is called the prior probability, and denotes our knowledge about the hypothesis, before data.\\ \item $P(data|hypothesis, I)$ represents the experimental measurements term.\\ \item Yet,  $P(hypothesis|data,I)$ denotes posterior probability, representing our knowledge about the hypothesis, after data information.
+
+\end{itemize}
+
+\\
+
+Now, lets use the marginalization equation for A and B propositions:
+
+\begin{center}
+    $P(A|I) = P(A,B|I) + P(X,\Bar{B}|I)$
+\end{center}
+\\
+\hspace*{0.6 cm} Now, using the product rule, we can write:
+
+\begin{center}
+    $P(A,B|I) = P(B,A|I) = P(B|A,I)$ x $P(A|I)$
+\end{center}
+
+\\
+
+Finally, we can use the above results: (in special doing the same thing as above to $\Bar{A}, \Bar{B}$):
+
+\begin{center}
+    $P(A|I) = \sum_{k=1}^{N} P(A,B_{k}|I)$
+\end{center}
+
+\end{document}

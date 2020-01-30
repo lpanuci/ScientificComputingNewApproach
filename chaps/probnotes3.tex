@@ -1,0 +1,101 @@
+\documentclass[oneside]{book}
+\usepackage[utf8]{inputenc}
+\usepackage{mathptmx}
+\usepackage[11pt]{moresize}
+\usepackage{amsmath}
+
+\title{CCM218 Notes 3}
+\author{Luca Hullen Panuci}
+\date{September 2019}
+
+
+\begin{document}
+
+\maketitle
+
+\section*{Random Variable}
+Some function X that associate for each element in $\Omega$ a value in an enumerable set. If the set of values is any real numbers interval, X is called a continuos random variable. If not, X is called a discrete random variable(when the image of the function X is countable).
+\section*{Discrete Models}
+
+In this section, we shall present some discrete probability models that can be useful in ours calculations in a large variety of situations.
+
+\begin{enumerate}
+    \item Uniform Discret Distribuition\\\\
+This is the case where the probability of the events in our experiment is the same. The probability is distributed evenly.\\
+\begin{center}
+{\large
+    P($x_j$) = $\frac{1}{n}$\hspace{2cm} $x\in$ ({$x_1$,$x_2$,...,$x_n$})}
+\end{center}
+    \item Geometric Distribution\\\\
+The geometric distribution can be related as the number of Bernoulli essays, with sucess probability constant \textit{p}, that precede the first sucess.\\
+If the probability of sucess in each trial is p, then the probability that the kth trial is the first sucess is:
+\begin{center}
+{\large
+    P($n$) = $(1-p)^{n-1}$p\hspace{2cm} $n\in$ ({$1$,$2$,...,$N$})}
+\end{center}
+  \item Binomial Distribution\\\\
+  The Binomial Distribution is a model of probability with parameters n experiments(independent) and probability p of the number of k successes in a sequence. A single success/failure experiment is called a Bernoulli trial.
+  \begin{center}
+  {\large  P($k|n,p$) = $\binom{n}{k} p^k(1-p)^{n-k}$}
+   
+     
+\end{center}
+  \item Poisson Distribution\\\\
+  The Poisson Distribution is a statistical distribution that shows how many times an event is likely to occur within a specified period.\\
+ It turns out the Poisson distribution is just a special case of the binomial, where the number of trials is large, and the probability of success in any given one is small.\\
+ \textit{Proof.} To a fixed number of events n, each with a constant probability of sucess p (or failure for q = 1 - p).\\\\Let's define a number:
+ \begin{center}
+     {\large$\lambda$ = np}
+ \end{center}
+ Solving for p, we get:
+  \begin{center}
+     {\large$p = \frac{\lambda}{n}$}
+ \end{center}
+ Now, we shall substitute p in the binomial distribution expression, and take the limit as n goes to infinity. We will get:
+  \begin{center}
+  {\large
+     $\lim_{n \to\infty} P(X = k) =          $\hspace*{0.1cm}$\lim_{n\to\infty} \frac{n!}{k!(n-k)!}
+     ({n})^k (1-\frac{\lambda}{n})^{n-k}}$\\
+     {\large \vspace*{0.4cm}$(\frac{\lambda^k}{k!}) \lim_{n\to\infty} \frac{n!}{(n-k)!} (\frac{1}{n^k}) (1-\frac{\lambda}{n})^n (1-\frac{\lambda}{n})^{-k}$}
+      \end{center}
+     \vspace*{0.4cm} We can rewrite the terms using fundamental properties of exponencial and factorial function as:
+     \begin{center}
+        {\large $\lim_{n\to\infty} \frac{n!}{(n-k)!}(\frac{1}{n^k}) = lim_{n\to\infty}(\frac{n}{n})(\frac{n-1}{n})(\frac{n-2}{n})..(\frac{n-k+1}{n})\rightarrow1$}
+     \end{center}
+     The second term limit
+     \begin{center}
+        {\large $lim_{n\to\infty}(1-\frac{\lambda}{n})^n = e^{-\lambda}$}
+     \end{center}
+     And the last term limit 
+     \begin{center}
+    {\large $lim_{n\to\infty}(1-\frac{\lambda}{n})^{-k} \simeq (1)^{-k} = 1 $}
+     \end{center}
+     So the terms just simplify to the Poisson Distribution:
+     \begin{center}
+         {\large $P(k|\lambda)$ = $\frac{\lambda^k e^{-\lambda}}{k!}$}
+     \end{center}
+     \item Hypergeometric Distribution\\\\
+     This probability distribution describes the probability of k successes in n trials, without replacement.\\
+     The classical application of the hypergeometric distribution is sampling without replacement.\\ Consider a box with n balls, $n_1$ blue balls and $n_2$ = n - $n_1$ black balls. If i take out of the box j balls(without reposition), what is the probability of k balls be blues?
+     \begin{center}
+         {\large  $P(k|n,n_1,j) = \frac{\binom{n_1}{k}\binom{n-n_1}{j-k}}{\binom{n}{j}}$
+
+     \end{center}
+     Where:
+     \begin{center}
+     \large{
+         $\binom{n}{j}$ \rightarrow $Number of possible diferent samples\\
+    \vspace*{0.2cm}\hspace*{0.8cm} $\binom{n_1}{k}$ \rightarrow $Number of diferents choices of k blue balls\\
+     \vspace*{0.3cm}\hspace*{0.3cm}$\binom{n-n_1}{j-k}$ \rightarrow $Number of ways to choose j-k black balls}
+     \end{center}
+     
+
+
+
+  
+    
+\end{enumerate}
+
+
+
+\end{document}

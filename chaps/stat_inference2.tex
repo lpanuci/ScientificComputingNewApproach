@@ -1,0 +1,52 @@
+\documentclass[oneside]{book}
+\usepackage[utf8]{inputenc}
+\usepackage{mathptmx}
+\usepackage[11pt]{moresize}
+\usepackage{amsmath}
+
+\title{Statistical Inference:  Bayesian Procedure}
+\author{Luca Hullen Panuci}
+\date{January 2020}
+
+
+\begin{document}
+
+\maketitle
+
+\section*{Bayesian General Procedure}
+
+In this section, we will expose the general procedure used in Bayesian Inference. 
+\begin{itemize}
+
+    \item Bayesian Procedure
+    
+    \begin{enumerate}
+        \item 
+        Choose a probability density function $\pi(\theta)$: the prior distribution. It is related to our beliefs about the parameter $\theta$, before any data.
+        
+        \item Choose a statistical model $p(x|\theta)$, that reflects our expectation  x given $\theta$
+        
+        \item After some data information, $D_n$ = ($X_1,...,X_n$), calculate the posterior distribution $p(\theta|D_n)$
+    \end{enumerate}
+\end{itemize}
+\section*{Posterior Distribution}
+
+In general, we can say that posterior distribution is the full answer to Bayesian problems. It gives a description of our unknown parameters, and we can use that to calculate probabilitys.\\
+Suppose that we have a posterior distribution $p(\theta | x)$, and we want to know the probability that $\theta$ is greater or equal to 100, we could do:
+
+\begin{center}
+    
+    $P(\theta \geq 100|x) = \sum_{100}^{\infty} p(\theta|x)$
+    \\
+    \vspace*{0.5cm}(or, for continuous $\theta$ values,  $P(\theta \geq 100|x) = \int_{100}^{\infty}p(\theta|x)d\theta$
+    
+\end{center}
+
+But, for large data, our posterior distribution might be complicated(the example above was just a simple and motivational example).
+
+By Bayes' theorem, the posterior distribution can be written as:
+\\
+\begin{center}
+  $p(\theta|X_1,...,X_n)$  $\frac{p(\theta|X_1,...,X_n) = p(X_1,...,X_n|\theta)\pi(\theta)}{p(X_1,...,X_n)}$
+\end{center}
+\end{document}
